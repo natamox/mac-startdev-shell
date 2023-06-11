@@ -26,4 +26,3 @@ brew install pnpm
 
 echo "✨✨ [envbuilder]  ✨✨ ==> 开始下载 yarn" 
 brew install yarn
-
