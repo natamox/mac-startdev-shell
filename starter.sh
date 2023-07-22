@@ -38,7 +38,6 @@ start_download() {
   brew install yarn
 }
 
-
 # 如果出现错误，立即终止脚本
 set -e
 
@@ -50,7 +49,7 @@ read -p "是否有代理，请输入选择 [y/n]: " is_proxy
 
 if [ "$is_proxy" == 'y' ] || [ -z "$is_proxy" ]; then
   read -p "输入代理端口号: " proxy_port
-  if expr $proxy_port : '\([0-9][0-9]*\)' >/dev/null; then
+  if [[ $proxy_port =~ ^[0-9]+$ ]]; then
     PROXY_PORT=$proxy_port
   fi
   start_proxy
@@ -59,5 +58,3 @@ if [ "$is_proxy" == 'y' ] || [ -z "$is_proxy" ]; then
 fi
 
 # start_download
-
-
