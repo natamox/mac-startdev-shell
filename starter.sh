@@ -20,6 +20,9 @@ start_download() {
   echo "开始下载安装 iterm2"
   brew install --cask iterm2
 
+  echo "开始下载安装 Docker"
+  brew install --cask docker
+
   echo "开始下载安装 oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -57,4 +60,4 @@ if [ "$is_proxy" == 'y' ] || [ -z "$is_proxy" ]; then
   curl -I https://www.google.com
 fi
 
-# start_download
+start_download
